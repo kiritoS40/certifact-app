@@ -22,7 +22,7 @@
           <h1>Certifact</h1>
         </div>
 
-        <button class="btn">Share a fact</button>
+        <button class="btn btn-large">Share a fact</button>
       </header>
 
       <form class="fact-form">
@@ -35,18 +35,30 @@
           <option value="science">Science</option>
           <option value="finance">Finance</option>
         </select>
-        <button class="btn">Post</button>
+        <button class="btn btn-large">Post</button>
       </form>
 
       <main class="main">
         <aside>
           <ul>
-            <li><button class="btn">All</button></li>
-            <li>
-              <button class="btn">Technology</button>
+            <li class="category">
+              <button class="btn btn-all-categories">All</button>
             </li>
-            <li>
-              <button class="btn">Science</button>
+            <li class="category">
+              <button
+                class="btn btn-category"
+                style="background-color: #3b82f6"
+              >
+                Technology
+              </button>
+            </li>
+            <li class="category">
+              <button
+                class="btn btn-category"
+                style="background-color: #16a34a"
+              >
+                Science
+              </button>
             </li>
           </ul>
         </aside>
