@@ -48,7 +48,9 @@ function createFactsList(dataArray) {
           target="_blank"
         >(Source)</a>
       </p>
-      <span class="tag" style="background-color: #3b82f6"
+      <span class="tag" style="background-color: ${
+        CATEGORIES.find((category) => category.name === fact.category).color
+      }"
       >${fact.category}</span
       >
     </li>`
