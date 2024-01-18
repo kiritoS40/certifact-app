@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./style.css";
 
 // init data
@@ -46,6 +47,9 @@ const initialFacts = [
 ];
 
 function App() {
+  // Define state variables
+  const [showForm, setShowForm] = useState(false);
+
   const appTitle = "Certifact";
 
   return (
@@ -57,10 +61,18 @@ function App() {
           <h1>{appTitle}</h1>
         </div>
 
-        <button className="btn btn-large btn-open">Share a fact</button>
+        <button
+          className="btn btn-large btn-open"
+          // Update state variable
+          onClick={() => setShowForm((show) => !show)}
+        >
+          Share a fact
+        </button>
       </header>
 
-      <NewFactForm />
+      {/* Use state variable */}
+      {showForm ? <NewFactForm /> : null}
+
       <main class="main">
         <CategoryFilter />
         <FactList />
