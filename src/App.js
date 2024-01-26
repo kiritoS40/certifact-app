@@ -25,8 +25,11 @@ function App() {
       const { data: facts, error } = await supabase
         .from("facts")
         .select("*")
-        .order("votesInteresting", { ascending: false });
-      setFacts(facts);
+        .order("votesInteresting", { ascending: false })
+        .limit(1000);
+
+      if (!error) setFacts(facts);
+      else alert("There was a problem fetching the facts.");
       setIsLoading(false);
     }
     getFacts();
